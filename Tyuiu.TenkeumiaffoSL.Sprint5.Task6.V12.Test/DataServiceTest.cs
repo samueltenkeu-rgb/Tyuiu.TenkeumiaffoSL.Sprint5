@@ -18,8 +18,8 @@ namespace Tyuiu.TenkeumiaffoSL.Sprint5.Task6.V12.Test
 
             int result = ds.LoadFromDataFile(path);
 
-            // В тестовых данных удвоенные буквы "нн": "Анна" (1), "ненавидит" (1), "ненастье" (1)
-            int expected = 3;
+            // учитываются только последовательные 'нн'
+            int expected = 1;
 
             Assert.AreEqual(expected, result);
 
