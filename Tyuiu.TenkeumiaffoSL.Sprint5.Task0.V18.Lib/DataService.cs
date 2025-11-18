@@ -1,0 +1,24 @@
+﻿using System;
+using System.IO;
+using tyuiu.cources.programming.interfaces.Sprint5;
+
+namespace Tyuiu.TenkeumiaffoSL.Sprint5.Task0.V18.Lib
+{
+    public class DataService : ISprint5Task0V18
+    {
+        public string SaveToFileTextData(int x)
+        {
+            // Вычисляем y(x) = x / sqrt(x^2 + x)
+            double y = x / Math.Sqrt(x * x + x);
+            y = Math.Round(y, 3);
+
+            // Путь к файлу в Temp
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
+
+            // Сохраняем результат
+            File.WriteAllText(path, y.ToString());
+
+            return path;
+        }
+    }
+}
